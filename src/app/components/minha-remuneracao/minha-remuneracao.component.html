@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12">
+        Minha Remuneração
+    </div>    
+</div>
+<div class="row">
+    <div class="col-7">
+        <div class="row">
+            <h2>{{totalValue | currency: 'BRL': true}}</h2>
+        </div>
+    </div>
+    <div class="col-5">
+        <mat-select>
+            <mat-option *ngFor="let period of periods" [value]="period.value">
+              {{period.viewValue}}
+            </mat-option>
+          </mat-select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <mat-label>Produção Total</mat-label>
+            </div>
+            <div class="col-6">
+                {{totais.producaoTotal  | currency: 'BRL': true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-label>Descontos</mat-label>
+            </div>        
+            <div class="col-6">
+                {{totais.descontos | currency: 'BRL': true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-label>Glosas</mat-label>
+            </div>
+            <div class="col-6">
+                <div>{{totais.glosas | currency: 'BRL': true}}</div>
+            </div>       
+        </div>
+    </div>    
+</div>

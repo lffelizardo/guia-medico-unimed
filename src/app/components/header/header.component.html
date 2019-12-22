@@ -1,0 +1,44 @@
+  <mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+        <span>Resultados da Cooperativa</span>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" routerLink="['']" routerLinkActive="active">Minha Cooperativa<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" routerLink="resultados" routerLinkActive="active">Meus Resultados</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" routerLink="remuneracao" routerLinkActive="active">Remuneração</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+    </mat-toolbar-row>
+</mat-toolbar>
+<!-- <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="menu-spacer">Resultados da Cooperativa</span>
+      
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row>
+        <div>
+            <a mat-button class="nav-item active" [routerLink]="'/accounts'"> Minha Cooperativa <span class="sr-only">(current)</span></a>
+            <a mat-button [routerLink]="'/create-account'"> Meus Resultados </a>
+            <a mat-button [routerLink]="'/contacts'"> Remuneração </a>
+      
+          </div>
+      </mat-toolbar-row>
+    </mat-toolbar> -->
