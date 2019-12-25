@@ -1,5 +1,44 @@
 <div class="row">
-    <div class="col-12">
+    <div class="col-12" style="color: green;">
         <h1 mat-dialog-title>{{data.paciente}}</h1>
     </div>
+</div>
+<div class="row">
+    <div class="col-5">
+
+        <div class="row">
+            <div class="col-6 remuneracao-label">
+                <mat-label>Atendido em</mat-label>
+            </div>
+            <div class="col-6 remuneracao-label" style="justify-content: left;">
+                <mat-label>Carteira do Plano</mat-label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 remuneracao-label">
+                <mat-label>{{data.dataAtendimento}}</mat-label>
+            </div>        
+            <div class="col-6 remuneracao-label" style="justify-content: left;">
+                {{data.carteiraPlano}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row table-container">
+                <mat-tab-group style="width: 100%;"> <!--ajustar no css-->
+                    <mat-tab label="Movimento">
+                        <guia-tab-movimentos></guia-tab-movimentos>
+                    </mat-tab>
+                    <mat-tab label="Modificadores">
+                        <guia-tab-modificadores></guia-tab-modificadores>
+                    </mat-tab>
+                    <mat-tab label="Glosas">
+                        <guia-tab-modal-glosas></guia-tab-modal-glosas>
+                    </mat-tab>
+                  </mat-tab-group>
+            </div>
+        </div>
+
+    </div>    
 </div>

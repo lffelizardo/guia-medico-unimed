@@ -1,47 +1,55 @@
 <div class="row">
-    <div class="col-12">
+
+    <div class="remuneracao-titulo col-12">
         Minha Remuneração
-    </div>    
-</div>
-<div class="row">
-    <div class="col-7">
-        <div class="row">
-            <h2>{{totalValue | currency: 'BRL': true}}</h2>
-        </div>
     </div>
+
+</div>
+
+<div class="row mb-2">
+    <div class="remuneracao-valor-total col-5">
+        <h2>{{totalValue | currency: 'BRL': true}}</h2>
+    </div>
+
     <div class="col-5">
         <mat-select>
-            <mat-option *ngFor="let period of periods" [value]="period.value">
+            <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of periods" [value]="period.value">
               {{period.viewValue}}
             </mat-option>
           </mat-select>
     </div>
+
 </div>
+
 <div class="row">
-    <div class="col-12">
+    <div class="col-5">
+
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 remuneracao-label">
                 <mat-label>Produção Total</mat-label>
             </div>
-            <div class="col-6">
+            <div class="col-6 remuneracao-valor">
                 {{totais.producaoTotal  | currency: 'BRL': true}}
             </div>
         </div>
+
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 remuneracao-label">
                 <mat-label>Descontos</mat-label>
             </div>        
-            <div class="col-6">
+            <div class="col-6 remuneracao-valor laranja">
                 {{totais.descontos | currency: 'BRL': true}}
             </div>
         </div>
+
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 remuneracao-label">
                 <mat-label>Glosas</mat-label>
             </div>
-            <div class="col-6">
+            <div class="col-6 remuneracao-valor laranja">
                 <div>{{totais.glosas | currency: 'BRL': true}}</div>
             </div>       
         </div>
+
     </div>    
 </div>

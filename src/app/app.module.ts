@@ -22,6 +22,9 @@ import { TabOutrosEventosComponent } from './components/tab-outros-eventos/tab-o
 import { TabDescontosComponent } from './components/tab-descontos/tab-descontos.component';
 import { TabGlosasComponent } from './components/tab-glosas/tab-glosas.component';
 import { ModalInfoPacienteComponent } from './components/modal-info-paciente/modal-info-paciente.component';
+import { TabMovimentosComponent } from './components/tab-movimentos/tab-movimentos.component';
+import { TabModificadoresComponent } from './components/tab-modificadores/tab-modificadores.component';
+import { TabModalGlosasComponent } from './components/tab-modal-glosas/tab-modal-glosas.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ModalInfoPacienteComponent } from './components/modal-info-paciente/mod
     TabOutrosEventosComponent,
     TabDescontosComponent,
     TabGlosasComponent,
-    ModalInfoPacienteComponent
+    ModalInfoPacienteComponent,
+    TabMovimentosComponent,
+    TabModificadoresComponent,
+    TabModalGlosasComponent
   ],
   imports: [
     BrowserModule,
