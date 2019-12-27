@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Period } from 'src/app/model/Period';
 import { Totais } from 'src/app/model/Totais';
+import { RemuneracaoService } from 'src/app/service/remuneracao.service';
+import { RemuneracaoDto } from 'src/app/model/remuneracao.dto';
+import { Remuneracao } from 'src/app/model/Remuneracao';
 
 @Component({
   selector: 'guia-minha-remuneracao',
@@ -12,8 +15,9 @@ export class MinhaRemuneracaoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  @Input() remuneracoes: RemuneracaoDto[];
+
+  remuneracao: Remuneracao;
 
   totalValue: number = 3726914;
   totais: Totais = {
@@ -27,5 +31,16 @@ export class MinhaRemuneracaoComponent implements OnInit {
     {value: '12-19', viewValue: 'Dezembro/2019'},
     {value: '01-20', viewValue: 'Janeiro/2019'}
   ];
+
+  ngOnInit() {
+  }
+
+  onPeriodChange(period){
+    const periodSelected = this.periods.filter((p: Period) => {
+      return p.viewValue === period.viewValue;
+    });
+    let remuneracaoDto = this.remuneracoes.filter(r => r.periodo === periodSelected.viewValue);
+    //this.remuneracao = remuneracaoDto.
+  }
 
 }

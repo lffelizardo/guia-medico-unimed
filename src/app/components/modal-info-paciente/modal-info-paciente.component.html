@@ -23,22 +23,37 @@
                 {{data.carteiraPlano}}
             </div>
         </div>
-
-        <div class="row">
-            <div class="row table-container">
-                <mat-tab-group style="width: 100%;"> <!--ajustar no css-->
-                    <mat-tab label="Movimento">
-                        <guia-tab-movimentos></guia-tab-movimentos>
-                    </mat-tab>
-                    <mat-tab label="Modificadores">
-                        <guia-tab-modificadores></guia-tab-modificadores>
-                    </mat-tab>
-                    <mat-tab label="Glosas">
-                        <guia-tab-modal-glosas></guia-tab-modal-glosas>
-                    </mat-tab>
-                  </mat-tab-group>
-            </div>
-        </div>
-
     </div>    
+</div>
+<div class="row">
+    <div class="row table-container-modal-info-pacientes">
+        <mat-tab-group style="width: 100%;"> <!--ajustar no css-->
+            <mat-tab label="Movimentos">
+                <guia-tab-movimentos></guia-tab-movimentos>
+            </mat-tab>
+            <mat-tab label="Modificadores">
+                <guia-tab-modificadores></guia-tab-modificadores>
+            </mat-tab>
+            <mat-tab label="Glosas">
+                <guia-tab-modal-glosas></guia-tab-modal-glosas>
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+</div>
+<div class="row col-totais-modal">
+    <div class="col-3">
+        Total Apresentado
+    </div>
+    <div class="col-3">
+        Total do Paciente
+    </div>
+</div>
+
+<div class="row col-totais-modal">
+    <div class="col-3">
+        <h3>3.029,15</h3>
+    </div>
+    <div class="col-3">
+        <h3>1.786,72</h3>
+    </div>
 </div>

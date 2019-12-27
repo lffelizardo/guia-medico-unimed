@@ -1,1 +1,37 @@
-<p>tab-modificadores works!</p>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="movimento">
+        <mat-header-cell *matHeaderCellDef class="mat-column-paciente"> Movimento </mat-header-cell>
+        <mat-cell *matCellDef="let modificador" class="mat-column-paciente"> {{modificador.movimento}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="valor">
+        <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+        <mat-cell *matCellDef="let modificador"> {{modificador.valor}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="acomodacao">
+        <mat-header-cell *matHeaderCellDef> Acomodação </mat-header-cell>
+        <mat-cell *matCellDef="let modificador"> {{modificador.acomodacao}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="variavel">
+        <mat-header-cell *matHeaderCellDef> Variável </mat-header-cell>
+        <mat-cell *matCellDef="let modificador"> {{modificador.variavel}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="urgencia">
+        <mat-header-cell *matHeaderCellDef> Urgência </mat-header-cell>
+        <mat-cell *matCellDef="let modificador"> {{modificador.urgencia}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+        <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+        <mat-cell *matCellDef="let modificador"> {{modificador.total}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

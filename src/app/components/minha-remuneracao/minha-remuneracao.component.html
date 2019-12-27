@@ -13,7 +13,7 @@
 
     <div class="col-5">
         <mat-select>
-            <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of periods" [value]="period.value">
+            <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of periods" [value]="period.value" (selectionChange)="onPeriodChange($event)">
               {{period.viewValue}}
             </mat-option>
           </mat-select>
