@@ -12,8 +12,8 @@
     </div>
 
     <div class="col-5">
-        <mat-select>
-            <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of periods" [value]="period.value" (selectionChange)="onPeriodChange($event)">
+        <mat-select (selectionChange)="onPeriodChange($event)" [(ngModel)]="selectedPeriod">
+            <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of periods" [value]="period.value">
               {{period.viewValue}}
             </mat-option>
           </mat-select>
@@ -21,7 +21,7 @@
 
 </div>
 
-<div class="row">
+<div class="row" *ngIf="remuneracao != undefined">
     <div class="col-5">
 
         <div class="row">
@@ -29,7 +29,7 @@
                 <mat-label>Produção Total</mat-label>
             </div>
             <div class="col-6 remuneracao-valor">
-                {{totais.producaoTotal  | currency: 'BRL': true}}
+                {{remuneracao.producaoTotal  | currency: 'BRL': true}}
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 <mat-label>Descontos</mat-label>
             </div>        
             <div class="col-6 remuneracao-valor laranja">
-                {{totais.descontos | currency: 'BRL': true}}
+                {{remuneracao.descontos | currency: 'BRL': true}}
             </div>
         </div>
 
@@ -47,7 +47,7 @@
                 <mat-label>Glosas</mat-label>
             </div>
             <div class="col-6 remuneracao-valor laranja">
-                <div>{{totais.glosas | currency: 'BRL': true}}</div>
+                <div>{{remuneracao.glosas | currency: 'BRL': true}}</div>
             </div>       
         </div>
 

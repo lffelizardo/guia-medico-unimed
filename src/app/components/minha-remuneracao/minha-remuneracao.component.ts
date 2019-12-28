@@ -13,11 +13,12 @@ import { Remuneracao } from 'src/app/model/Remuneracao';
 
 export class MinhaRemuneracaoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private remuneracaoService: RemuneracaoService) { }
 
   @Input() remuneracoes: RemuneracaoDto[];
 
   remuneracao: Remuneracao;
+  selectedPeriod: string;
 
   totalValue: number = 3726914;
   totais: Totais = {
@@ -35,11 +36,10 @@ export class MinhaRemuneracaoComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPeriodChange(period){
-    const periodSelected = this.periods.filter(p => p.viewValue === period.viewValue);
+  onPeriodChange(){
+    const periodSelected = this.periods.filter(p => p.value === this.selectedPeriod)[0];
     console.log(periodSelected);
-    //let remuneracaoDto = this.remuneracoes.filter(r => r.periodo === periodSelected.viewValue);
-    //this.remuneracao = remuneracaoDto.
+    this.remuneracao = this.remuneracaoService.getRemuneracaoByPeriod(periodSelected.value).remuneracoes;
   }
 
 }

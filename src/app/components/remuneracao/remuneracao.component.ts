@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { RemuneracaoDto } from 'src/app/model/remuneracao.dto';
 import {RemuneracaoService } from 'src/app/service/remuneracao.service';
 
@@ -10,7 +10,9 @@ export class RemuneracaoComponent implements OnInit {
 
   remuneracoes: RemuneracaoDto[];
 
-  constructor(private remuneracaoService: RemuneracaoService) { }
+  constructor(private remuneracaoService: RemuneracaoService) {
+    this.findRemuneracoes();
+   }
 
   ngOnInit() {
   }

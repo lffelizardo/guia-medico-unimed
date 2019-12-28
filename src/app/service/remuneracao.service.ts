@@ -183,22 +183,22 @@ export class RemuneracaoService {
 
     remuneracoes: RemuneracaoDto[] = [
         {
-            periodo: 'Novembro/2019',
-            remuneracoes: [
-              this.remuneracao1, this.remuneracao2
-            ]
+            periodo: '11-19',
+            remuneracoes: this.remuneracao1
         },
         {
-            periodo: 'Dezembro/2019',
-            remuneracoes: [
-              this.remuneracao1, this.remuneracao2
-            ]
+            periodo: '12-19',
+            remuneracoes: this.remuneracao2
         }
     ];
 
 
     getRemuneracaoById(): RemuneracaoDto[] {
         return this.remuneracoes;
+    }
+
+    getRemuneracaoByPeriod(period: string): RemuneracaoDto{
+      return this.remuneracoes.filter(r => r.periodo === period)[0];
     }
 
 }

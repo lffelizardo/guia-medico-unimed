@@ -3,7 +3,7 @@ import { Remuneracao } from './Remuneracao';
 class RemuneracaoDto {
 
     periodo: string;
-    remuneracoes: Remuneracao[];
+    remuneracoes: Remuneracao;
 }
 
 export { RemuneracaoDto }
