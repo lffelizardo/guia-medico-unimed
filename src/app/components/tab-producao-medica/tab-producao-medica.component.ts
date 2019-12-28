@@ -14,13 +14,11 @@ export class TabProducaoMedicaComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  ngOnInit() {
-  }
-
   @Output() producaoMedicaSelected: ProducaoMedica;
 
   displayedColumns: string[] = ['paciente', 'data', 'valor', 'variavel', 'glosas', 'prorata', 'valorRecebido'];
-  movimentos: Movimento[] = [
+
+  movimentos: [
     {
       movimento: '401424555 - Cesariana',
       posicao: 'Cirurgião',
@@ -39,7 +37,7 @@ export class TabProducaoMedicaComponent implements OnInit {
     }
   ];
 
-  modificadores: Modificador[] = [
+  modificadores: [
     {
       movimento: '401424555 - Cesariana',
       valor: 890.00,
@@ -58,7 +56,7 @@ export class TabProducaoMedicaComponent implements OnInit {
     }
   ];
 
-  glosas: Glosa[] = [
+  glosas: [
     {
       movimento: '413245574 - Parto Normal',
       valor: 1267.77,
@@ -67,8 +65,9 @@ export class TabProducaoMedicaComponent implements OnInit {
   ];
 
 
-  dataSource: ProducaoMedica[] = [
-    {paciente: 'Acelio Ricardo COLACO',
+  dataSource: [
+    {
+      /*paciente: 'Acelio Ricardo colaco',
       data: '08/05/2019',
       valor: 280,
       variavel: 5.60,
@@ -81,9 +80,12 @@ export class TabProducaoMedicaComponent implements OnInit {
       modificadores: this.modificadores,
       glosas: this.glosas,
       valorApresentado: 3029.15,
-      totalPaciente: 1786.72
+      totalPaciente: 1786.72*/
     }
   ];
+
+  ngOnInit() {
+  }
 
   getRecord(row: ProducaoMedica):void{
     console.log(row);

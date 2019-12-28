@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core'
 
-import 'rxjs/add/operator/map'
 import { RemuneracaoDto } from 'src/app/model/remuneracao.dto'
 import { Remuneracao } from 'src/app/model/Remuneracao'
 import { ProducaoMedica } from 'src/app/model/ProducaoMedica'
@@ -32,7 +31,7 @@ export class RemuneracaoService {
         }
       ];
 
-      movimentos2: Movimento[] = [
+      movimentos2: [
         {
           movimento: '401424555 - Cesariana',
           posicao: 'Cirurgião',
@@ -51,7 +50,7 @@ export class RemuneracaoService {
         }
       ];
 
-      movimentos3: Movimento[] = [
+      movimentos3: [
         {
           movimento: '401424555 - Cesariana',
           posicao: 'Cirurgião',
@@ -86,7 +85,7 @@ export class RemuneracaoService {
         }
       ];
 
-      modificadores1: Modificador[] = [
+      modificadores1: [
         {
           movimento: '401424555 - Cesariana',
           posicao: 'Cirurgião',
@@ -107,7 +106,7 @@ export class RemuneracaoService {
         }
       ];
 
-      modificadores2: Modificador[] = [
+      modificadores2: [
         {
           movimento: '601424555 - Cesariana',
           posicao: 'Cirurgião',
@@ -167,7 +166,7 @@ export class RemuneracaoService {
           producaoTotal: 44393.87,
           descontos:  5087.73,
           glosa: 2.040,
-          producaoMedica: ProducaoMedica[] = [
+          producaoMedica:  [
               this.producaoMedica1, this.producaoMedica2
           ]
       };
@@ -177,7 +176,7 @@ export class RemuneracaoService {
         producaoTotal: 44393.87,
         descontos:  5087.73,
         glosa: 2.040,
-        producaoMedica: ProducaoMedica[] = [
+        producaoMedica: [
             this.producaoMedica1, this.producaoMedica2
         ]
     }
@@ -185,13 +184,13 @@ export class RemuneracaoService {
     remuneracoes: RemuneracaoDto[] = [
         {
             periodo: 'Novembro/2019',
-            remuneracoes: Remuneracao[] = [
+            remuneracoes: [
               this.remuneracao1, this.remuneracao2
             ]
         },
         {
             periodo: 'Dezembro/2019',
-            remuneracoes: Remuneracao[] = [
+            remuneracoes: [
               this.remuneracao1, this.remuneracao2
             ]
         }

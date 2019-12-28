@@ -25,6 +25,7 @@ import { ModalInfoPacienteComponent } from './components/modal-info-paciente/mod
 import { TabMovimentosComponent } from './components/tab-movimentos/tab-movimentos.component';
 import { TabModificadoresComponent } from './components/tab-modificadores/tab-modificadores.component';
 import { TabModalGlosasComponent } from './components/tab-modal-glosas/tab-modal-glosas.component';
+import { RemuneracaoService } from './service/remuneracao.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { TabModalGlosasComponent } from './components/tab-modal-glosas/tab-modal
     MatTableModule,
     MatDialogModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RemuneracaoService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],
   entryComponents: [ModalInfoPacienteComponent]
 })

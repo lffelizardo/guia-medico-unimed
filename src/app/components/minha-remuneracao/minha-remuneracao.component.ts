@@ -36,10 +36,9 @@ export class MinhaRemuneracaoComponent implements OnInit {
   }
 
   onPeriodChange(period){
-    const periodSelected = this.periods.filter((p: Period) => {
-      return p.viewValue === period.viewValue;
-    });
-    let remuneracaoDto = this.remuneracoes.filter(r => r.periodo === periodSelected.viewValue);
+    const periodSelected = this.periods.filter(p => p.viewValue === period.viewValue);
+    console.log(periodSelected);
+    //let remuneracaoDto = this.remuneracoes.filter(r => r.periodo === periodSelected.viewValue);
     //this.remuneracao = remuneracaoDto.
   }
 
