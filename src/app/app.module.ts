@@ -25,6 +25,7 @@ import { TabMovimentosComponent } from './components/tab-movimentos/tab-moviment
 import { TabModificadoresComponent } from './components/tab-modificadores/tab-modificadores.component';
 import { TabModalGlosasComponent } from './components/tab-modal-glosas/tab-modal-glosas.component';
 import { RemuneracaoService } from './service/remuneracao.service';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { RemuneracaoService } from './service/remuneracao.service';
     FormsModule,
     MatTabsModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    ChartsModule
   ],
   providers: [RemuneracaoService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],

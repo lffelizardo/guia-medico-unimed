@@ -6,7 +6,7 @@ import { RemuneracaoComponent } from './components/remuneracao/remuneracao.compo
 
 
 const routes: Routes = [
-  {path: '', component: MinhaCooperativaComponent},
+  {path: 'cooperativa', component: MinhaCooperativaComponent},
   {path: 'resultados', component: MeusResultadosComponent},
   {path: 'remuneracao', component: RemuneracaoComponent}
 ];

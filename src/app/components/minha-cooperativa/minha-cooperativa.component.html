@@ -1,1 +1,23 @@
-<p>minha-cooperativa works!</p>
+<div class="row">
+    <div class="col-7 carteira-clientes-container">
+        <div class="cooperativa-background">
+            <div class="row">
+                <div class="cooperativa-clientes-titulo col-12">
+                    Carteira de Clientes
+                </div>
+            </div>
+            <div class="row">
+                <div class="chart-wrapper">
+                    <canvas baseChart 
+                        [datasets]="lineChartData" 
+                        [labels]="lineChartLabels" 
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors" 
+                        [legend]="lineChartLegend" 
+                        [chartType]="lineChartType" 
+                        [plugins]="lineChartPlugins">
+                    </canvas>
+                </div>
+        </div>
+    </div>
+</div>
