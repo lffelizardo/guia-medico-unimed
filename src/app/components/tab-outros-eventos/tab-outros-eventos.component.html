@@ -1,1 +1,39 @@
-<p>tab-outros-eventos works!</p>
+<div class="row">
+    <div class="col-12 remuneracao-container">
+        <div class="outros-eventos-background">
+            <div class="row">
+
+                <div class="remuneracao-titulo col-12">
+                    Outros Créditos
+                </div>
+            
+            </div>
+            
+            <div class="row mb-2">
+                <div class="remuneracao-valor-total col-5">
+                    <h3>{{outrosEventos.totalCreditos}}</h3>
+                </div>
+            </div>
+        </div>
+        <mat-table [dataSource]="eventos" class="mat-elevation-z8 outros-eventos-table-row">
+            
+            <ng-container matColumnDef="evento">
+                <mat-header-cell *matHeaderCellDef class="mat-column-paciente"> Evento </mat-header-cell>
+                <mat-cell *matCellDef="let evento" class="mat-column-paciente"> {{evento.nome}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="valor">
+                <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+                <mat-cell *matCellDef="let evento"> {{evento.valor}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="detalhes">
+                <mat-header-cell *matHeaderCellDef> Detalhes </mat-header-cell>
+                <mat-cell *matCellDef="let evento" class="outros-eventos-column-detalhes"> {{evento.detalhes}} </mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

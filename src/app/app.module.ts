@@ -13,7 +13,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MinhaCooperativaComponent } from './components/minha-cooperativa/minha-cooperativa.component';
 import { MeusResultadosComponent } from './components/meus-resultados/meus-resultados.component';
 import { RemuneracaoComponent } from './components/remuneracao/remuneracao.component';
-import { MinhaRemuneracaoComponent } from './components/minha-remuneracao/minha-remuneracao.component';
 import { MatSelectModule, MatFormFieldModule, MatInputModule, MatTabsModule, MatTableModule, MatDialogModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { RemuneracaoVariavelComponent } from './components/remuneracao-variavel/remuneracao-variavel.component';
@@ -34,7 +33,6 @@ import { RemuneracaoService } from './service/remuneracao.service';
     MinhaCooperativaComponent,
     MeusResultadosComponent,
     RemuneracaoComponent,
-    MinhaRemuneracaoComponent,
     RemuneracaoVariavelComponent,
     TabProducaoMedicaComponent,
     TabOutrosEventosComponent,

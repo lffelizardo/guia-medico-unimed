@@ -7,10 +7,10 @@
 
     <div class="row mb-2">
         <div class="col-5 remuneracao-valor-total d-flex align-items-center laranja">
-            <h2>{{totalValue | currency: 'BRL': true}}</h2>
+            <h2>{{remuneracaoVariavel.totalValue}}</h2>
         </div>
         <div class="col-5 remuneracao-informacao d-flex align-items-center">
-            <mat-label>ou {{percentual}} de 4% possíveis</mat-label>
+            <mat-label>ou {{remuneracaoVariavel.percentual}} de 4% possíveis</mat-label>
         </div>
     </div>
 
@@ -24,11 +24,11 @@
             <div class="row mb-3">
 
                 <div class="col-2 remuneracao-valor-total d-flex align-items-center laranja">
-                    <h2>{{percentualConquista}}</h2>
+                    <h2>{{remuneracaoVariavel.percentualConquista}}</h2>
                 </div>
 
                 <div class="col-8 remuneracao-informacao d-flex align-items-center">
-                    <mat-label>Você conquistou {{percentualConquista}} dos R$ 1490,76 que seriam possíveis</mat-label>
+                    <mat-label>Você conquistou {{remuneracaoVariavel.percentualConquista}} dos R$ 1490,76 que seriam possíveis</mat-label>
                 </div>
 
             </div>

@@ -1,1 +1,74 @@
-<p>tab-glosas works!</p>
+<div class="row">
+    <div class="col-12 remuneracao-container">
+        <div class="outros-eventos-background">
+            <div class="row">
+
+                <div class="col-3">
+                    <div class="row col-3">
+                        <div class="remuneracao-titulo">
+                            Glosas
+                        </div>    
+                    </div>
+                    <div class="row mb-2">
+                        <div class="remuneracao-valor-total col-5 laranja">
+                            <h3>{{glosas.totalGlosas}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row">
+                        <div class="remuneracao-titulo col-7">
+                            Em Contestação
+                         </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="remuneracao-valor-total col-5">
+                            <h3>{{glosas.totalContestacao}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row">
+                        <div class="remuneracao-titulo col-3">
+                            Recuperado
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="remuneracao-valor-total col-5">
+                            <h3>{{glosas.totalRecuperado}}</h3>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <mat-table [dataSource]="periods" class="mat-elevation-z8 outros-eventos-table-row">
+            
+            <ng-container matColumnDef="glosa">
+                <mat-header-cell *matHeaderCellDef class="mat-column-paciente"> Glosas do Período </mat-header-cell>
+                <mat-cell *matCellDef="let glosa" class="mat-column-paciente"> {{glosa.nomePaciente}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="movimento">
+                <mat-header-cell *matHeaderCellDef > Movimento </mat-header-cell>
+                <mat-cell *matCellDef="let glosa"> {{glosa.movimento}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="valor">
+                <mat-header-cell *matHeaderCellDef > Valor </mat-header-cell>
+                <mat-cell *matCellDef="let glosa" class="outros-eventos-column-detalhes"> {{glosa.valor}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="recuperado">
+                <mat-header-cell *matHeaderCellDef > Recuperado </mat-header-cell>
+                <mat-cell *matCellDef="let glosa" class="outros-eventos-column-detalhes"> {{glosa.recuperado}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef > status </mat-header-cell>
+                <mat-cell *matCellDef="let glosa" class="outros-eventos-column-detalhes"> {{glosa.status}} </mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

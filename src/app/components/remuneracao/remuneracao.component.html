@@ -1,21 +1,82 @@
 <div class="row">
     <div class="col-6 remuneracao-container">
         <div class="remuneracao-background">
-            <guia-minha-remuneracao></guia-minha-remuneracao>
+            <div class="row">
+
+                <div class="remuneracao-titulo col-12">
+                    Minha Remuneração
+                </div>
+            
+            </div>
+            
+            <div class="row mb-2">
+                <div class="remuneracao-valor-total col-5" *ngIf="remuneracao != undefined">
+                    <h2>{{remuneracao.totalRemuneracao}}</h2>
+                </div>
+            
+                <div class="col-5">
+                    <mat-select (selectionChange)="onPeriodChange($event)" [(ngModel)]="selectedPeriod">
+                        <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of periods" [value]="period.value">
+                          {{period.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                </div>
+            
+            </div>
+            <div class="row" *ngIf="remuneracao != undefined">
+                <div class="col-5">
+            
+                    <div class="row">
+                        <div class="col-6 remuneracao-label">
+                            <mat-label>Produção Total</mat-label>
+                        </div>
+                        <div class="col-6 remuneracao-valor">
+                            {{remuneracao.producaoTotal}}
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="col-6 remuneracao-label">
+                            <mat-label>Descontos</mat-label>
+                        </div>        
+                        <div class="col-6 remuneracao-valor laranja">
+                            {{remuneracao.descontos}}
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="col-6 remuneracao-label">
+                            <mat-label>Glosas</mat-label>
+                        </div>
+                        <div class="col-6 remuneracao-valor laranja">
+                            <div>{{remuneracao.glosa}}</div>
+                        </div>       
+                    </div>
+            
+                </div>    
+            </div>
         </div>
     </div>
+    
     <div class="col-6 remuneracao-container">
-        <div class="remuneracao-background">
+        <div class="remuneracao-background" *ngIf="remuneracao != undefined">
             <guia-remuneracao-variavel></guia-remuneracao-variavel>
         </div>
     </div>
 </div>
-<div class="row table-container">
-    <mat-tab-group style="width: 100%;"> <!--ajustar no css-->
+<div class="row table-container" *ngIf="remuneracao != undefined">
+    <mat-tab-group style="width: 100%;" >
         <mat-tab label="Produção Médica">
             <guia-tab-producao-medica></guia-tab-producao-medica>
         </mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
+        <mat-tab label="Outros Eventos">
+            <guia-tab-outros-eventos></guia-tab-outros-eventos>
+        </mat-tab>
+        <mat-tab label="Descontos">
+            <guia-tab-descontos></guia-tab-descontos>
+        </mat-tab>
+        <mat-tab label="Glosas">
+            <guia-tab-glosas></guia-tab-glosas>
+        </mat-tab>
       </mat-tab-group>
 </div>

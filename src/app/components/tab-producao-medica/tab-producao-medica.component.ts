@@ -5,6 +5,8 @@ import { Modificador } from 'src/app/model/Modificador';
 import { Glosa } from 'src/app/model/Glosa';
 import { ModalInfoPacienteComponent } from '../modal-info-paciente/modal-info-paciente.component';
 import { MatDialog } from '@angular/material';
+import { Remuneracao } from 'src/app/model/Remuneracao';
+import { RemuneracaoService } from 'src/app/service/remuneracao.service';
 
 @Component({
   selector: 'guia-tab-producao-medica',
@@ -12,7 +14,10 @@ import { MatDialog } from '@angular/material';
 })
 export class TabProducaoMedicaComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private remuneracaoService: RemuneracaoService) { }
+
+  @Input() remuneracao: Remuneracao;
+  producaoMedica: ProducaoMedica[];
 
   @Output() producaoMedicaSelected: ProducaoMedica;
 
@@ -65,26 +70,10 @@ export class TabProducaoMedicaComponent implements OnInit {
   ];
 
 
-  dataSource: [
-    {
-      /*paciente: 'Acelio Ricardo colaco',
-      data: '08/05/2019',
-      valor: 280,
-      variavel: 5.60,
-      glosa: 0,
-      prorata: '-',
-      valorRecebido: 285.60,
-      dataAtendimento: '21/05/2019',
-      carteiraPlano: '0335100551008626',
-      movimentos: this.movimentos,
-      modificadores: this.modificadores,
-      glosas: this.glosas,
-      valorApresentado: 3029.15,
-      totalPaciente: 1786.72*/
-    }
-  ];
-
   ngOnInit() {
+    console.log(this.remuneracao);
+    this.remuneracaoService.currentRemuneracao.subscribe(r => this.remuneracao = r.remuneracoes);
+    this.producaoMedica = this.remuneracao.producaoMedica;
   }
 
   getRecord(row: ProducaoMedica):void{
