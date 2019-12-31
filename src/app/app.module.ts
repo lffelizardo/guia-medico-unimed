@@ -26,6 +26,8 @@ import { TabModificadoresComponent } from './components/tab-modificadores/tab-mo
 import { TabModalGlosasComponent } from './components/tab-modal-glosas/tab-modal-glosas.component';
 import { RemuneracaoService } from './service/remuneracao.service';
 import { ChartsModule } from 'ng2-charts';
+import { SinistralidadeAcumuladaComponent } from './components/sinistralidade-acumulada/sinistralidade-acumulada.component';
+import { CarteiraClientesComponent } from './components/carteira-clientes/carteira-clientes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ChartsModule } from 'ng2-charts';
     ModalInfoPacienteComponent,
     TabMovimentosComponent,
     TabModificadoresComponent,
-    TabModalGlosasComponent
+    TabModalGlosasComponent,
+    SinistralidadeAcumuladaComponent,
+    CarteiraClientesComponent
   ],
   imports: [
     BrowserModule,
