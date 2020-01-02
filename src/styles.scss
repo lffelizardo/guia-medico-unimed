@@ -63,3 +63,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex: 0 0 28%;
     width: 28%;
 }
+
+.color-link-nav {
+    color: white;
+}
+
+.nav-pills {
+    .nav-link {
+      border-radius: .25rem;
+    }
+
+  .nav-link.active,
+  .show > .nav-link {
+    color: #fff;
+    background-color: green;
+  }
+}
+

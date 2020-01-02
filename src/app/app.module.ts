@@ -28,6 +28,7 @@ import { RemuneracaoService } from './service/remuneracao.service';
 import { ChartsModule } from 'ng2-charts';
 import { SinistralidadeAcumuladaComponent } from './components/sinistralidade-acumulada/sinistralidade-acumulada.component';
 import { CarteiraClientesComponent } from './components/carteira-clientes/carteira-clientes.component';
+import { ContraprestracaoEfetivaComponent } from './components/contraprestracao-efetiva/contraprestracao-efetiva.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CarteiraClientesComponent } from './components/carteira-clientes/cartei
     TabModificadoresComponent,
     TabModalGlosasComponent,
     SinistralidadeAcumuladaComponent,
-    CarteiraClientesComponent
+    CarteiraClientesComponent,
+    ContraprestracaoEfetivaComponent
   ],
   imports: [
     BrowserModule,
