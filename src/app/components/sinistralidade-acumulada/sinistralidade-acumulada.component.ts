@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChartDataSets } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
+import { CooperativaDto } from 'src/app/model/cooperativa.dto';
+import { CooperativaService } from 'src/app/service/cooperativa.service';
 
 @Component({
   selector: 'guia-sinistralidade-acumulada',
@@ -8,10 +10,9 @@ import { Label, Color } from 'ng2-charts';
 })
 export class SinistralidadeAcumuladaComponent implements OnInit {
 
-  lineChartData: ChartDataSets[] = [
-    { data: [85, 72, 78, 75, 77, 75, 78, 80, 82, 86, 89, 81], label: '2018', fill: false },
-    { data: [75, 82, 68, 55, 47, 45, 58, 60, 72, 86, 79, 61], label: '2019', fill: false },
-  ];
+  @Input() cooperativaDto: CooperativaDto;
+
+  lineChartData: any;
 
   lineChartLabels: Label[] = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
 
@@ -58,8 +59,18 @@ export class SinistralidadeAcumuladaComponent implements OnInit {
   lineChartPlugins = [];
   lineChartType = 'line';
 
-  constructor() { }
+  constructor(private cooperativaService: CooperativaService) { }
 
   ngOnInit() {
+    this.cooperativaService.currentCoopertaiva.subscribe(c => this.cooperativaDto = c);
+    this.fillChart();
+  }
+
+  fillChart(){
+
+    this.lineChartData = [
+      { data: this.cooperativaDto.sinistralidade.lastYear, label: this.cooperativaDto.sinistralidade.labelLastYear, fill: false },
+      { data: this.cooperativaDto.sinistralidade.currentYear, label: this.cooperativaDto.sinistralidade.labelCurrentYear, fill: false },
+    ];
   }
 }

@@ -80,3 +80,40 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 }
 
+.cooperativa-background {
+  background-color: white;
+  padding: 20px;
+  min-height: 350px;
+}
+
+.consulta-clientes-background {
+  background-color: white;
+  padding: 20px;
+  min-height: 376px;
+  width: 100%;
+  min-width: 330px;;
+}
+
+.carteira-clientes-footer{
+  background-color: seagreen;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.consulta-clientes-footer{
+  background-color: seagreen;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  min-width: 330px;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+

@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label, BaseChartDirective } from 'ng2-charts';
+import { CooperativaService } from 'src/app/service/cooperativa.service';
+import { CooperativaDto } from 'src/app/model/cooperativa.dto';
 
 @Component({
   selector: 'guia-minha-cooperativa',
@@ -8,59 +10,12 @@ import { Color, Label, BaseChartDirective } from 'ng2-charts';
 })
 export class MinhaCooperativaComponent implements OnInit {
 
-  lineChartData: ChartDataSets[] = [
-    { data: [85, 72, 78, 75, 77, 75, 78, 80, 82, 86, 89, 81], label: '2018', fill: false },
-    { data: [75, 82, 68, 55, 47, 45, 58, 60, 72, 86, 79, 61], label: '2019', fill: false },
-  ];
+  @Output() cooperativaDto: CooperativaDto;
 
-  lineChartLabels: Label[] = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
-
-  lineChartOptions = {
-    responsive: true,
-    scales: {
-      xAxes: [{
-           gridLines: {
-                display: false
-           }
-        }],
-      yAxes: [{
-           gridLines: {
-                display:false
-           },
-           ticks: {
-            display: false
-           },
-        }]
-      },
-    legend: {
-      labels : {
-          useLineStyle: false,
-          boxWidth: 20
-      },
-      spanGaps: true,
-      position: 'top',
-      align: 'end'
-    }
-  };
-
-  lineChartColors: Color[] = [
-    {
-      borderColor: 'green',
-      backgroundColor: 'rgba(0,255,0,0.3)', //green
-    },
-    {
-      borderColor: 'yellowgreen',
-      backgroundColor: 'rgba(0,255,0,0.3)', //green
-    },
-  ];
-
-  lineChartLegend = true;
-  lineChartPlugins = [];
-  lineChartType = 'line';
-
-  constructor() { }
+  constructor(private cooperativaService: CooperativaService) { }
 
   ngOnInit() {
+    this.cooperativaDto = this.cooperativaService.findCooperativaDataById();
   }
 
 }

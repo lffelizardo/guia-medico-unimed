@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Color, Label } from 'ng2-charts';
 import { ChartDataSets } from 'chart.js';
+import { CooperativaService } from 'src/app/service/cooperativa.service';
+import { CooperativaDto } from 'src/app/model/cooperativa.dto';
 
 @Component({
   selector: 'guia-contraprestracao-efetiva',
@@ -8,10 +10,9 @@ import { ChartDataSets } from 'chart.js';
 })
 export class ContraprestracaoEfetivaComponent implements OnInit {
 
-  lineChartData: ChartDataSets[] = [
-    { data: [85, 72, 78, 75, 77, 75, 78, 80, 82, 86, 89, 81], label: '2018', fill: false },
-    { data: [75, 82, 68, 55, 47, 45, 58, 60, 72, 86, 79, 61], label: '2019', fill: false },
-  ];
+  @Input() cooperativaDto: CooperativaDto;
+
+  lineChartData: any;
 
   lineChartLabels: Label[] = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
 
@@ -58,9 +59,19 @@ export class ContraprestracaoEfetivaComponent implements OnInit {
   lineChartPlugins = [];
   lineChartType = 'line';
 
-  constructor() { }
+  constructor(private cooperativaService: CooperativaService) { }
 
   ngOnInit() {
+    this.cooperativaService.currentCoopertaiva.subscribe(c => this.cooperativaDto = c);
+    this.fillChart();
+  }
+
+  fillChart(){
+    
+    this.lineChartData = [
+      { data: this.cooperativaDto.contraprestacao.lastYear, label: this.cooperativaDto.contraprestacao.labelLastYear, fill: false },
+      { data: this.cooperativaDto.contraprestacao.currentYear, label: this.cooperativaDto.contraprestacao.labelCurrentYear, fill: false },
+    ];
   }
 
 }

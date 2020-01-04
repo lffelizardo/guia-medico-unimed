@@ -1,0 +1,26 @@
+<div class="col-6">
+    <div class="carteira-clientes-container">
+        <div class="consulta-clientes-background">
+            <div class="row">
+                <div class="cooperativa-clientes-titulo col-12">
+                    Liquidez Corrente
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 ">
+                    <div class="row carteira-clientes-titulo-box d-flex align-items-center laranja">
+                        <h2 class="laranja" *ngIf="cooperativaDto != undefined && cooperativaDto.liquidez != undefined">{{cooperativaDto.liquidez.totalLiquidez}}</h2>
+                    </div>
+                    <div class="row carteira-clientes-label-beneficiarios">
+                        Liquidez
+                    </div>                    
+                </div>
+                
+            </div>
+        
+    </div>
+    <div class="row consulta-clientes-footer">
+        <p style="padding: 5px;">{{cooperativaDto.liquidez.texto}}</p>
+    </div>
+</div>
+

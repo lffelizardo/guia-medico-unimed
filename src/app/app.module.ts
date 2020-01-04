@@ -29,6 +29,9 @@ import { ChartsModule } from 'ng2-charts';
 import { SinistralidadeAcumuladaComponent } from './components/sinistralidade-acumulada/sinistralidade-acumulada.component';
 import { CarteiraClientesComponent } from './components/carteira-clientes/carteira-clientes.component';
 import { ContraprestracaoEfetivaComponent } from './components/contraprestracao-efetiva/contraprestracao-efetiva.component';
+import { ConsultaClienteComponent } from './components/consulta-cliente/consulta-cliente.component';
+import { LiquidezCorrenteComponent } from './components/liquidez-corrente/liquidez-corrente.component';
+import { CooperativaService } from './service/cooperativa.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { ContraprestracaoEfetivaComponent } from './components/contraprestracao-
     TabModalGlosasComponent,
     SinistralidadeAcumuladaComponent,
     CarteiraClientesComponent,
-    ContraprestracaoEfetivaComponent
+    ContraprestracaoEfetivaComponent,
+    ConsultaClienteComponent,
+    LiquidezCorrenteComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,7 @@ import { ContraprestracaoEfetivaComponent } from './components/contraprestracao-
     MatDialogModule,
     ChartsModule
   ],
-  providers: [RemuneracaoService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RemuneracaoService,CooperativaService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],
   entryComponents: [ModalInfoPacienteComponent]
 })

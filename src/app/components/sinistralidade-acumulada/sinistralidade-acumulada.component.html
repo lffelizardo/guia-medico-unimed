@@ -1,40 +1,39 @@
-<div class="row">
-    <div class="carteira-clientes-container">
-        <div class="cooperativa-background">
-            <div class="row">
-                <div class="cooperativa-clientes-titulo col-12">
-                    Sinistralidade Acumulada
-                </div>
+
+<div class="carteira-clientes-container">
+    <div class="cooperativa-background">
+        <div class="row">
+            <div class="cooperativa-clientes-titulo col-12">
+                Sinistralidade Acumulada
             </div>
-            <div class="row">
-                <div class="col-5 ">
-                    <div class="row carteira-clientes-titulo-box d-flex align-items-center laranja">
-                        51945954
-                    </div>
-                    <div class="row carteira-clientes-label-beneficiarios">
-                        Sinistralidade
-                    </div>                    
+        </div>
+        <div class="row">
+            <div class="col-5 ">
+                <div class="row carteira-clientes-titulo-box d-flex align-items-center laranja">
+                    {{cooperativaDto.sinistralidade.totalSinistralidade}}%
                 </div>
-                
+                <div class="row carteira-clientes-label-beneficiarios">
+                    Sinistralidade
+                </div>                    
             </div>
-            <div class="row carteira-clientes-row-chart">
-                <div class="chart-wrapper">
-                    <canvas baseChart 
-                        height="200"
-                        width="640"
-                        [datasets]="lineChartData" 
-                        [labels]="lineChartLabels" 
-                        [options]="lineChartOptions"
-                        [colors]="lineChartColors" 
-                        [legend]="lineChartLegend" 
-                        [chartType]="lineChartType" 
-                        [plugins]="lineChartPlugins">
-                    </canvas>
-                </div>
+            
         </div>
-        <div class="row carteira-clientes-label-beneficiarios" style="background-color: seagreen; height: 100px;">
-            Com muitos esforços temos conseguido
-        </div>
+        <div class="row carteira-clientes-row-chart" *ngIf="cooperativaDto != undefined && cooperativaDto.sinistralidade != undefined">
+            <div class="chart-wrapper">
+                <canvas baseChart 
+                    height="200"
+                    width="640"
+                    [datasets]="lineChartData" 
+                    [labels]="lineChartLabels" 
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors" 
+                    [legend]="lineChartLegend" 
+                    [chartType]="lineChartType" 
+                    [plugins]="lineChartPlugins">
+                </canvas>
+            </div>
     </div>
     
+</div>
+<div class="row carteira-clientes-footer">
+    <p style="padding: 5px;">{{cooperativaDto.sinistralidade.texto}}</p>
 </div>

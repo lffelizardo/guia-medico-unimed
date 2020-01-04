@@ -17,8 +17,4 @@ export class RemuneracaoVariavelComponent implements OnInit {
     this.remuneracaoService.currentRemuneracao.subscribe(r => this.remuneracaoVariavel = r.remuneracaoVariavel);
   }
 
-  /*totalValue: number = 74538;
-  percentual: string = '2%';
-  percentualConquista: string = '50%';*/
-
 }
