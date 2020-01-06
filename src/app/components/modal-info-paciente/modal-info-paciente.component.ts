@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, Output } from '@angular/core';
 import { ProducaoMedica } from 'src/app/model/ProducaoMedica';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
@@ -12,8 +12,9 @@ export class ModalInfoPacienteComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: ProducaoMedica) { }
 
   ngOnInit() {
+    this.producaoMedicaSelected = this.data;
   }
 
-  @Input() producaoMedicaSelected: ProducaoMedica; 
+  @Output() producaoMedicaSelected: ProducaoMedica; 
 
 }

@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-12" style="color: green;">
+        <h1 mat-dialog-title>{{data.paciente}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+
+        <div class="row">
+            <div class="col-4 modal-glosa-contestar-label">
+                <mat-label>Movimento</mat-label>
+            </div>
+            <div class="col-3 modal-glosa-contestar-label">
+                <mat-label>Valor Glosado</mat-label>
+            </div>
+            <div class="col-3 modal-glosa-contestar-label">
+                <mat-label>Motivo</mat-label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 modal-glosa-contestar-label">
+                <mat-label>{{data.glosa.movimento}}</mat-label>
+            </div>        
+            <div class="col-3 modal-glosa-contestar-label">
+                <mat-label>{{data.glosa.valor}}</mat-label>
+            </div>
+            <div class="col-5 modal-glosa-contestar-label">
+                <mat-label>{{data.glosa.motivo}}</mat-label>
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="row">
+    <div class="col-12">
+        <mat-form-field style="width: 100%;">
+            <textarea matInput
+               [formControl]="motivoContestar">
+            </textarea>
+          </mat-form-field> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <button mat-button (click)="cancelar()">Cancelar</button>
+    </div>
+    <div class="col-6">
+        <button mat-button color="primary" (click)="enviar()">Enviar Contestação</button>
+    </div>
+</div>

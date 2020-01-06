@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Movimento } from 'src/app/model/Movimento';
+import { ProducaoMedica } from 'src/app/model/ProducaoMedica';
 
 @Component({
   selector: 'guia-tab-movimentos',
@@ -12,16 +13,7 @@ export class TabMovimentosComponent implements OnInit {
   displayedColumns: string[] = ['movimento', 'posicao', 'valor', 'modificador', 'glosa', 'total'];
   
 
-  dataSource: Movimento[] = [
-    {
-      movimento : '401424555 - Cesariana',
-      posicao : 'Cirurgião',
-      valor : 890.00,
-      modificador : '+R$ 861,69',
-      glosa : '-',
-      total : 1786.72
-    }
-  ];
+  @Input() data: ProducaoMedica;
 
   ngOnInit() {
   }

@@ -1,4 +1,4 @@
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table [dataSource]="data.glosas" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="movimento">
         <mat-header-cell *matHeaderCellDef class="mat-column-paciente"> Movimento </mat-header-cell>
@@ -14,7 +14,8 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="motivo">
         <mat-header-cell *matHeaderCellDef> Motivo </mat-header-cell>
-        <mat-cell *matCellDef="let glosa"> {{glosa.motivo}} </mat-cell>
+        <mat-cell *matCellDef="let glosa"> {{glosa.motivo}}  <a mat-button (click)="openContestar(glosa)" class="modal-glosas-link-contestar"> Contestar</a>
+        </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

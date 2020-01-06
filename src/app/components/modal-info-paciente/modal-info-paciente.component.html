@@ -29,13 +29,13 @@
     <div class="row table-container-modal-info-pacientes">
         <mat-tab-group style="width: 100%;"> <!--ajustar no css-->
             <mat-tab label="Movimentos">
-                <guia-tab-movimentos></guia-tab-movimentos>
+                <guia-tab-movimentos [data]="producaoMedicaSelected"></guia-tab-movimentos>
             </mat-tab>
             <mat-tab label="Modificadores">
-                <guia-tab-modificadores></guia-tab-modificadores>
+                <guia-tab-modificadores [data]="producaoMedicaSelected"></guia-tab-modificadores>
             </mat-tab>
             <mat-tab label="Glosas">
-                <guia-tab-modal-glosas></guia-tab-modal-glosas>
+                <guia-tab-modal-glosas [data]="producaoMedicaSelected"></guia-tab-modal-glosas>
             </mat-tab>
           </mat-tab-group>
     </div>

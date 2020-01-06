@@ -13,8 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MinhaCooperativaComponent } from './components/minha-cooperativa/minha-cooperativa.component';
 import { MeusResultadosComponent } from './components/meus-resultados/meus-resultados.component';
 import { RemuneracaoComponent } from './components/remuneracao/remuneracao.component';
-import { MatSelectModule, MatFormFieldModule, MatInputModule, MatTabsModule, MatTableModule, MatDialogModule } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { MatSelectModule, MatFormFieldModule, MatInputModule, MatTabsModule, MatTableModule, MatDialogModule, MatFormFieldControl } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RemuneracaoVariavelComponent } from './components/remuneracao-variavel/remuneracao-variavel.component';
 import { TabProducaoMedicaComponent } from './components/tab-producao-medica/tab-producao-medica.component';
 import { TabOutrosEventosComponent } from './components/tab-outros-eventos/tab-outros-eventos.component';
@@ -32,6 +32,7 @@ import { ContraprestracaoEfetivaComponent } from './components/contraprestracao-
 import { ConsultaClienteComponent } from './components/consulta-cliente/consulta-cliente.component';
 import { LiquidezCorrenteComponent } from './components/liquidez-corrente/liquidez-corrente.component';
 import { CooperativaService } from './service/cooperativa.service';
+import { ModalContestarGlosaComponent } from './components/modal-contestar-glosa/modal-contestar-glosa.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { CooperativaService } from './service/cooperativa.service';
     CarteiraClientesComponent,
     ContraprestracaoEfetivaComponent,
     ConsultaClienteComponent,
-    LiquidezCorrenteComponent
+    LiquidezCorrenteComponent,
+    ModalContestarGlosaComponent
   ],
   imports: [
     BrowserModule,
@@ -66,10 +68,13 @@ import { CooperativaService } from './service/cooperativa.service';
     MatTabsModule,
     MatTableModule,
     MatDialogModule,
-    ChartsModule
+    ChartsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [RemuneracaoService,CooperativaService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],
-  entryComponents: [ModalInfoPacienteComponent]
+  entryComponents: [ModalInfoPacienteComponent, ModalContestarGlosaComponent]
 })
 export class AppModule { }

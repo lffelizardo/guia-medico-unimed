@@ -92,7 +92,7 @@ export class RemuneracaoService {
         }
       ];
 
-      modificadores1: [
+      modificadores1: Modificador[] = [
         {
           movimento: '401424555 - Cesariana',
           posicao: 'Cirurgião',
@@ -113,7 +113,7 @@ export class RemuneracaoService {
         }
       ];
 
-      modificadores2: [
+      modificadores2: Modificador[] = [
         {
           movimento: '601424555 - Cesariana',
           posicao: 'Cirurgião',

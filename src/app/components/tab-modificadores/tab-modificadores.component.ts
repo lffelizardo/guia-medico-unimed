@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Modificador } from 'src/app/model/Modificador';
 import { Movimento } from 'src/app/model/Movimento';
+import { ProducaoMedica } from 'src/app/model/ProducaoMedica';
 
 @Component({
   selector: 'guia-tab-modificadores',
@@ -12,17 +13,7 @@ export class TabModificadoresComponent implements OnInit {
 
   displayedColumns: string[] = ['movimento', 'valor', 'acomodacao', 'variavel', 'urgencia', 'total'];
 
-  dataSource: Modificador[] = [
-    {
-      movimento : '401424555 - Cesariana',
-      posicao : 'Cirurgião',
-      valor : 890.00,
-      acomodacao : 861.69,
-      variavel : 0,
-      urgencia : 0,
-      total : 1786.72
-    }
-  ];
+  @Input() data: ProducaoMedica;
 
   ngOnInit() {
   }
