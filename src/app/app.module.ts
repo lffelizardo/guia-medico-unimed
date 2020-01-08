@@ -13,7 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MinhaCooperativaComponent } from './components/minha-cooperativa/minha-cooperativa.component';
 import { MeusResultadosComponent } from './components/meus-resultados/meus-resultados.component';
 import { RemuneracaoComponent } from './components/remuneracao/remuneracao.component';
-import { MatSelectModule, MatFormFieldModule, MatInputModule, MatTabsModule, MatTableModule, MatDialogModule, MatFormFieldControl } from '@angular/material';
+import { MatSelectModule, MatFormFieldModule, MatInputModule, MatTabsModule, MatTableModule, MatDialogModule, MatFormFieldControl, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RemuneracaoVariavelComponent } from './components/remuneracao-variavel/remuneracao-variavel.component';
 import { TabProducaoMedicaComponent } from './components/tab-producao-medica/tab-producao-medica.component';
@@ -71,7 +71,8 @@ import { ModalContestarGlosaComponent } from './components/modal-contestar-glosa
     ChartsModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [RemuneracaoService,CooperativaService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],

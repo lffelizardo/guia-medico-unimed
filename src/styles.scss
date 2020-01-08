@@ -132,3 +132,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
 }
 
+.minha-cooperativa-card {
+  padding-left: 0!important;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.mat-card-content-cooperativa {
+  margin-left: 12px;
+}
+
+.mat-card-footer-cooperativa {
+  margin-left: inherit;
+  margin-right: initial;
+  width: 102%;
+}
+
+.p-card-cooperativa{
+  margin-left: 12px;
+}
+
+.mat-card-header-text{
+  width: 100%;
+}
+
+
