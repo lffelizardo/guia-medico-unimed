@@ -5,7 +5,7 @@ import { CooperativaService } from 'src/app/service/cooperativa.service';
 import { CooperativaDto } from 'src/app/model/cooperativa.dto';
 
 @Component({
-  selector: 'guia-contraprestracao-efetiva',
+  selector: '[guia-contraprestracao-efetiva]',
   templateUrl: './contraprestracao-efetiva.component.html'
 })
 export class ContraprestracaoEfetivaComponent implements OnInit {

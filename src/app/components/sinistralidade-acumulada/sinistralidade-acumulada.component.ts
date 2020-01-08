@@ -5,7 +5,7 @@ import { CooperativaDto } from 'src/app/model/cooperativa.dto';
 import { CooperativaService } from 'src/app/service/cooperativa.service';
 
 @Component({
-  selector: 'guia-sinistralidade-acumulada',
+  selector: '[guia-sinistralidade-acumulada]',
   templateUrl: './sinistralidade-acumulada.component.html'
 })
 export class SinistralidadeAcumuladaComponent implements OnInit {

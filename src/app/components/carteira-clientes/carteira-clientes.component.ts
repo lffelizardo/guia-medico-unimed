@@ -5,7 +5,7 @@ import { CooperativaDto } from 'src/app/model/cooperativa.dto';
 import { CooperativaService } from 'src/app/service/cooperativa.service';
 
 @Component({
-  selector: 'guia-carteira-clientes',
+  selector: '[guia-carteira-clientes]',
   templateUrl: './carteira-clientes.component.html'
 })
 export class CarteiraClientesComponent implements OnInit {

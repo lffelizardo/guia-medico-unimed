@@ -1,7 +1,76 @@
 @import '~@angular/material/theming';
 @include mat-core();
-$my-app-primary: mat-palette($mat-green, 900);
-$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+
+$my-app-green: (
+   50: #00995D,
+   100: #00995D,
+    200: #00995D,
+    300: #00995D,
+    400: #00995D,
+    500: #00995D,
+    600: #00995D,
+    700: #00995D,
+    800: #00995D,
+    900: #00995D,
+    A100: #00995D,
+    A200: #00995D,
+    A400: #00995D,
+    A700: #00995D,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
+
+$my-app-dark-green: (
+   50: #0A5F55,
+   100: #0A5F55,
+    200: #0A5F55,
+    300: #0A5F55,
+    400: #0A5F55,
+    500: #0A5F55,
+    600: #0A5F55,
+    700: #0A5F55,
+    800: #0A5F55,
+    900: #0A5F55,
+    A100: #0A5F55,
+    A200: #0A5F55,
+    A400: #0A5F55,
+    A700: #0A5F55,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
+
+$my-app-primary: mat-palette($my-app-green);
+$my-app-accent:  mat-palette($my-app-dark-green);
 $my-app-warn:    mat-palette($mat-deep-orange);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+
 @include angular-material-theme($my-app-theme);

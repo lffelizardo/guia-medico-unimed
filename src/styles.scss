@@ -71,12 +71,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .nav-pills {
     .nav-link {
       border-radius: .25rem;
+      font-size: initial;
     }
 
   .nav-link.active,
   .show > .nav-link {
     color: #fff;
-    background-color: green;
+    background-color: #00995d;
   }
 }
 
@@ -94,15 +95,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   min-width: 330px;;
 }
 
-.carteira-clientes-footer{
+.carteira-clientes-footer {
   background-color: seagreen;
-  height: 100px;
+  padding: 10px;
   position: relative;
-  width: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
+  width: 100%; 
+
+  p {
+    margin: 0;
+  }
 }
 
 .consulta-clientes-footer{
@@ -132,15 +133,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
 }
 
-.minha-cooperativa-card {
-  padding-left: 0!important;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-}
-
 .mat-card-content-cooperativa {
   margin-left: 12px;
+  width: 100%;
 }
 
 .mat-card-footer-cooperativa {
@@ -153,8 +148,102 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-left: 12px;
 }
 
-.mat-card-header-text{
+.row .mat-card-header-text{
   width: 100%;
+  margin: 10px;
 }
+
+.row .mat-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  min-height: 12vh;
+}
+
+.row .mat-card {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 53vh;
+}
+
+.col-sm-5.col-5-5 {
+  flex: 0 0 49%;
+  max-width: 49%;
+  width: 49%;
+}
+
+.row-mat-card-title-height{
+  height: 50%;
+}
+
+.flex-layout-chart{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .row .mat-card {
+    min-height: 34vh;
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .row-mat-card-title-height{
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .row .mat-card {
+    min-height: 45vh;
+  }
+
+  .row .mat-card-footer {
+    min-height: 13vh;
+
+    p {
+      font-size: 12px;
+    }    
+  }
+
+  .row-mat-card-title-height{
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .row .mat-card {
+    min-height: 50vh;
+  }
+
+  .row .mat-card-footer {
+    min-height: 15vh;
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .mat-card-title {
+    font-size: 10px !important;
+  }
+
+  .carteira-clientes-titulo-box {
+    font-size: 12px !important;
+  }
+
+  .row-mat-card-title-height{
+    height: 30%;
+  }
+}
+
+
+
 
 

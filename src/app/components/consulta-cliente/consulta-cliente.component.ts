@@ -3,7 +3,7 @@ import { CooperativaService } from 'src/app/service/cooperativa.service';
 import { CooperativaDto } from 'src/app/model/cooperativa.dto';
 
 @Component({
-  selector: 'guia-consulta-cliente',
+  selector: '[guia-consulta-cliente]',
   templateUrl: './consulta-cliente.component.html'
 })
 export class ConsultaClienteComponent implements OnInit {

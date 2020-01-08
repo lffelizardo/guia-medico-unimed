@@ -1,31 +1,26 @@
-<mat-card class="minha-cooperativa-card" style="height: 101.5%;">
-    <mat-card-header style="margin-top: 30%;">
-      <mat-card-title style="text-align: center; font-size: x-large;">Liquidez Corrente</mat-card-title>
-    </mat-card-header>
-    
-    <mat-card-content class="mat-card-content-cooperativa">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="carteira-clientes-titulo-box d-flex align-items-center laranja">
-                    <mat-card-title class="laranja" *ngIf="cooperativaDto != undefined && cooperativaDto.liquidez != undefined" style="font-size: -webkit-xxx-large;
-                    text-align: center;
-                    width: 100%;">
-                        {{cooperativaDto.liquidez.totalLiquidez}}
-                    </mat-card-title>
-                </div>
-                <div class="carteira-clientes-label-beneficiarios" style="font-size: large; text-align: center;">
-                    Liquidez
-                </div>                    
-            </div>            
-        </div>      
-    </mat-card-content>
-
-    <mat-card-footer class="carteira-clientes-footer" style="margin-left: inherit;
-    margin-right: initial;
-    width: 105%;
-    margin: 0 0px 0px 0px;
-    margin-top: 36%;
-    margin-bottom: -10%;">
+<mat-card class="col-12 minha-cooperativa-card">
+    <div class="row row-mat-card-title-height d-flex justify-content-center">
+        <mat-card-header class="align-self-center">
+            <mat-card-title style="text-align: center; font-size: x-large;">Liquidez Corrente</mat-card-title>
+          </mat-card-header>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <mat-card-content class="mat-card-content-cooperativa">
+            <div class="row">
+                <div class="col-12 ">
+                    <div class="carteira-clientes-titulo-box d-flex align-items-center justify-content-center laranja">
+                        <mat-card-title class="laranja" *ngIf="cooperativaDto != undefined && cooperativaDto.liquidez != undefined">
+                            {{cooperativaDto.liquidez.totalLiquidez}}
+                        </mat-card-title>
+                    </div>
+                    <div class="carteira-clientes-label-beneficiarios" style="font-size: large; text-align: center;">
+                        Liquidez
+                    </div>                    
+                </div>            
+            </div>      
+        </mat-card-content>
+    </div>
+    <mat-card-footer class="carteira-clientes-footer">
         <p class="p-card-cooperativa">
             {{cooperativaDto.liquidez.texto}}
           </p>
