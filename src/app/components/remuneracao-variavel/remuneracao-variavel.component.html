@@ -2,35 +2,30 @@
     <div class="row">
         <div class="col-12 remuneracao-titulo">
             Minha Remuneração Variável
-        </div>    
+        </div>
     </div>
 
-    <div class="row mb-2">
-        <div class="col-5 remuneracao-valor-total d-flex align-items-center laranja">
-            <h2>{{remuneracaoVariavel.totalValue}}</h2>
+    <div class="row mb-3">
+        <div class="col-auto remuneracao-valor-total d-flex align-items-center laranja">
+          <span style="font-size: 24px"><b>{{remuneracaoVariavel.totalValue}}</b></span>
         </div>
-        <div class="col-5 remuneracao-informacao d-flex align-items-center">
-            <mat-label>ou {{remuneracaoVariavel.percentual}} de 4% possíveis</mat-label>
+        <div class="col-6 remuneracao-informacao d-flex align-items-center">
+            <span>ou {{remuneracaoVariavel.percentual}} de 4% possíveis</span>
         </div>
     </div>
 
     <div class="row">
-
         <div class="col-12 remuneracao-titulo">
             Minha Performance Variável
-        </div>    
-
+        </div>
         <div class="col-12">
             <div class="row mb-3">
-
-                <div class="col-2 remuneracao-valor-total d-flex align-items-center laranja">
-                    <h2>{{remuneracaoVariavel.percentualConquista}}</h2>
+                <div class="col-sm-2 remuneracao-valor-total d-flex align-items-center laranja">
+                  <span style="font-size: 24px"><b>{{remuneracaoVariavel.percentualConquista}}</b></span>
                 </div>
-
-                <div class="col-8 remuneracao-informacao d-flex align-items-center">
+                <div class="col-sm-10 remuneracao-informacao d-flex align-items-center">
                     <mat-label>Você conquistou {{remuneracaoVariavel.percentualConquista}} dos R$ 1490,76 que seriam possíveis</mat-label>
                 </div>
-
             </div>
         </div>
     </div>
