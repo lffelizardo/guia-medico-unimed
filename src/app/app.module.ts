@@ -26,13 +26,9 @@ import { TabModificadoresComponent } from './components/tab-modificadores/tab-mo
 import { TabModalGlosasComponent } from './components/tab-modal-glosas/tab-modal-glosas.component';
 import { RemuneracaoService } from './service/remuneracao.service';
 import { ChartsModule } from 'ng2-charts';
-import { SinistralidadeAcumuladaComponent } from './components/sinistralidade-acumulada/sinistralidade-acumulada.component';
-import { CarteiraClientesComponent } from './components/carteira-clientes/carteira-clientes.component';
-import { ContraprestracaoEfetivaComponent } from './components/contraprestracao-efetiva/contraprestracao-efetiva.component';
-import { ConsultaClienteComponent } from './components/consulta-cliente/consulta-cliente.component';
-import { LiquidezCorrenteComponent } from './components/liquidez-corrente/liquidez-corrente.component';
 import { CooperativaService } from './service/cooperativa.service';
 import { ModalContestarGlosaComponent } from './components/modal-contestar-glosa/modal-contestar-glosa.component';
+import { IndicadorComponent } from './components/indicador/indicador.component';
 
 @NgModule({
   declarations: [
@@ -50,12 +46,8 @@ import { ModalContestarGlosaComponent } from './components/modal-contestar-glosa
     TabMovimentosComponent,
     TabModificadoresComponent,
     TabModalGlosasComponent,
-    SinistralidadeAcumuladaComponent,
-    CarteiraClientesComponent,
-    ContraprestracaoEfetivaComponent,
-    ConsultaClienteComponent,
-    LiquidezCorrenteComponent,
-    ModalContestarGlosaComponent
+    ModalContestarGlosaComponent,
+    IndicadorComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +66,7 @@ import { ModalContestarGlosaComponent } from './components/modal-contestar-glosa
     ReactiveFormsModule,
     MatCardModule
   ],
-  providers: [RemuneracaoService,CooperativaService,{provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RemuneracaoService, CooperativaService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],
   entryComponents: [ModalInfoPacienteComponent, ModalContestarGlosaComponent]
 })

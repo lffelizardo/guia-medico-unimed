@@ -1,13 +1,10 @@
-import { Carteira } from './carteira';
-import { Sinistralidade } from './sinistralidade';
-import { Contraprestacao } from './contraprestacao';
-import { ConsultaCliente } from './consulta-cliente';
-import { LiquidezCorrente } from './liquidez-corrente';
+
+import {Indicador} from './indicador.model';
 
 export class CooperativaDto {
-    carteira: Carteira;
-    sinistralidade: Sinistralidade;
-    contraprestacao: Contraprestacao;
-    consultaCliente: ConsultaCliente;
-    liquidez: LiquidezCorrente;
+    carteira: Indicador;
+    sinistralidade: Indicador;
+    contraprestacao: Indicador;
+    consultaCliente: Indicador;
+    liquidez: Indicador;
 }
