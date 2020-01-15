@@ -243,6 +243,35 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 //  }
 //}
 
+.mat-card-indicador {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: block;
+  position: relative;
+  padding: 16px;
+  border-radius: 4px;
+  min-height: 484px;
+}
+
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: block;
+  position: relative;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .mat-card-indicador {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    min-height: 226px;
+  }
+}
+
 
 
 

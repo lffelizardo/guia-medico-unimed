@@ -1,4 +1,4 @@
-<mat-card *ngIf="indicador">
+<mat-card *ngIf="indicador" [ngClass]="indicador.hasGrafico ? 'mat-card-indicador' : 'mat-card'">
   <mat-card-header>
     <mat-card-title>{{indicador.titulo}}</mat-card-title>
     <mat-card-subtitle  *ngIf="indicador.hasGrafico" >
@@ -46,7 +46,7 @@
     </div>
 
   </mat-card-content>
-  <mat-card-footer class="indicador-footer">
+  <mat-card-footer [ngClass]="indicador.hasGrafico ? 'indicador-footer-height' : 'indicador-footer'">
     <p>
       {{indicador.textoResumo}}
     </p>

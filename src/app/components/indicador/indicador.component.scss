@@ -16,3 +16,31 @@
     margin: 0;
   }
 }
+
+.indicador-footer-height {
+  background-color: #0A5F55;
+  color: white;
+  font-size: 14px;
+  text-align: justify;
+  padding: 15px;
+  min-height: 135px;
+
+  p {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .indicador-footer-height {
+    background-color: #0A5F55;
+    color: white;
+    font-size: 14px;
+    text-align: justify;
+    padding: 15px;
+    min-height: 218px;
+  
+    p {
+      margin: 0;
+    }
+  }
+}
