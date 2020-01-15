@@ -1,7 +1,3 @@
 <div class="row">
-  <app-indicador class="col-md-6 pt-3" [indicador]="cooperativaDto.carteira"></app-indicador>
-  <app-indicador class="col-md-6 pt-3" [indicador]="cooperativaDto.sinistralidade"></app-indicador>
-  <app-indicador class="col-md-6 pt-3" [indicador]="cooperativaDto.contraprestacao"></app-indicador>
-  <app-indicador class="col-md-3 pt-3" [indicador]="cooperativaDto.consultaCliente"></app-indicador>
-  <app-indicador class="col-md-3 pt-3" [indicador]="cooperativaDto.liquidez"></app-indicador>
+  <app-indicador *ngFor ="let indicador of cooperativaDto.indicadores" class="{{indicador.hasGrafico ? 'col-md-6' : 'col-md-3'}} pt-3" [indicador]="indicador"></app-indicador>
 </div>

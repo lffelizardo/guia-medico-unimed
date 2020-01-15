@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CooperativaDto } from '../model/cooperativa.dto';
+import { Cooperativa } from '../model/cooperativa.model';
 import { BehaviorSubject } from 'rxjs';
 import {Indicador} from '../model/indicador.model';
 
@@ -78,19 +78,15 @@ export class CooperativaService {
     labelAnoAtual: null
   };
 
-  cooperativa: CooperativaDto = {
-    carteira: this.carteira,
-    sinistralidade: this.sinistralidade,
-    contraprestacao: this.contraprestacao,
-    consultaCliente: this.consultaCliente,
-    liquidez: this.liquidez
+  cooperativa: Cooperativa = {
+    indicadores: [this.carteira, this.sinistralidade, this.contraprestacao, this.consultaCliente, this.liquidez]
   };
 
-  private messageSource: BehaviorSubject<CooperativaDto> = new BehaviorSubject(new CooperativaDto());
+  private messageSource: BehaviorSubject<Cooperativa> = new BehaviorSubject(new Cooperativa());
   currentCoopertaiva = this.messageSource.asObservable();
 
 
-  public findCooperativaDataById(): CooperativaDto {
+  public findCooperativaDataById(): Cooperativa {
     this.messageSource.next(this.cooperativa);
     return this.cooperativa;
   }
