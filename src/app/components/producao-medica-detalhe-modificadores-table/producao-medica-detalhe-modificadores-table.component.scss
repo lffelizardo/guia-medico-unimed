@@ -1,0 +1,23 @@
+mat-table {
+  height: 180px;
+  min-width: 620px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+mat-header-row {
+  min-height: 40px;
+}
+
+mat-header-row, mat-row {
+  border-style: none;
+}
+mat-row {
+  min-height: 25px;
+}
+mat-cell {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.mat-header-cell {
+  text-align: center;
+}

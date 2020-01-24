@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Minha Remuneração
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row d-flex align-items-center">
+      <div class="col-sm-6 green" *ngIf="periodoSelecionado">
+        <span style="font-size: 38px; margin-left: 15px"><b>{{periodoSelecionado.saldoTotal | currency: 'BRL'}}</b></span>
+      </div>
+      <div class="col-sm-6" style="text-align: right">
+        <mat-select (selectionChange)="onPeriodChange($event)" [(value)]="periodoSelecionado" style="width: 150px">
+          <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of minhaRemurecao.periodos" [value]="period">
+            {{period.mesAnoReferenciaLabel}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div style="margin-top: 10px; margin-left: 15px" class="col-md-12" *ngIf="periodoSelecionado">
+
+      <table style="font-size: 13; color: gray; line-height: 28px">
+        <tr>
+          <td>Produção Total</td>
+          <td style="padding-left: 10px">{{periodoSelecionado.totalProducao | currency: 'BRL'}}</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">Descontos</td>
+          <td class="laranja"  style="padding-left: 10px">-{{periodoSelecionado.totalDescontos | currency: 'BRL'}}</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">Glosas</td>
+          <td class="laranja" style="padding-left: 10px">-{{periodoSelecionado.totalGlosas | currency: 'BRL'}}</td>
+        </tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,24 @@
+.modal-glosa-contestar-label {
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+textarea {
+  margin-top: 12px;
+  width: 100%;
+  min-height: 60px;
+  height: 120px;
+  max-height: 160px;
+  font-size: 13px;
+}
+
+.button-enviar-contestacao {
+  background-color: #00995d;
+  color: white;
+}
+
+.close-div {
+  text-align: right;
+  margin-top: -20px
+}

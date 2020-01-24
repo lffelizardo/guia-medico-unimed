@@ -1,0 +1,31 @@
+<mat-card *ngIf="minhaRemuneracaoDetalhe" class="col-12">
+  <mat-card-header>
+    <mat-card-title class="titulo">
+      Minha Remuneração Variável
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div style="padding-left: 25px" class="remuneracao-valor-total d-flex align-items-center laranja">
+        <span style="font-size: 38px"><b>{{minhaRemuneracaoDetalhe.remuneracaoVariavelValue | currency:'BRL'}}</b></span>
+      </div>
+      <div style="padding-left: 5px" class="remuneracao-informacao d-flex align-items-center">
+        <span>{{minhaRemuneracaoDetalhe.remuneracaoVariavelLabel}}</span>
+      </div>
+    </div>
+    <mat-card-header>
+    <mat-card-title class="titulo">
+        Minha Performance Variável
+    </mat-card-title>
+    </mat-card-header>
+    <div class="row">
+      <div style="padding-left: 25px" class="remuneracao-valor-total d-flex align-items-center laranja">
+        <span style="font-size: 38px"><b>{{minhaRemuneracaoDetalhe.remuneracaoVariavelPercentual}}%</b></span>
+      </div>
+      <div style="padding-left: 5px" class="remuneracao-informacao d-flex align-items-center">
+        <mat-label>{{minhaRemuneracaoDetalhe.remuneracaoVariavelPercentualLabel}}</mat-label>
+      </div>
+    </div>
+  </mat-card-content>
+
+</mat-card>

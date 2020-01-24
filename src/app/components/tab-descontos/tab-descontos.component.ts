@@ -20,7 +20,7 @@ export class TabDescontosComponent implements OnInit {
   displayedColumns: string[] = ['evento', 'valor', 'detalhes'];
 
   ngOnInit() {
-    this.remuneracaoService.currentRemuneracao.subscribe(r => this.descontos = r.remuneracoes.listDescontos);
+    // this.remuneracaoService.currentRemuneracao.subscribe(r => this.descontos = r.remuneracoes.listDescontos);
     this.eventos = this.descontos.eventos;
   }
 
