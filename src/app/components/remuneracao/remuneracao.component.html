@@ -1,64 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 mb-2 remuneracao-container">
-      <div class="remuneracao-background">
-        <div class="remuneracao-titulo col-sm-12">
-          Minha Remuneração
-        </div>
-
-        <div class="row col-md-12">
-          <div class="remuneracao-valor-total col-sm-6 laranja" *ngIf="remuneracao != undefined">
-            <span style="font-size: 24px"><b>{{remuneracao.totalRemuneracao}}</b></span>
-          </div>
-          <div class="col-sm-6" style="text-align: right">
-            <mat-select (selectionChange)="onPeriodChange($event)" [(ngModel)]="selectedPeriod" style="width: 150px">
-              <mat-option class="remuneracao-dropbox-mes" *ngFor="let period of periods" [value]="period.value">
-                {{period.viewValue}}
-              </mat-option>
-            </mat-select>
-          </div>
-        </div>
-
-        <div style="margin-top: 10px" class="col-md-12" *ngIf="remuneracao != undefined">
-
-          <table style="font-size: 13; color: gray">
-            <tr>
-              <td>Produção Total</td>
-              <td style="padding-left: 10px">{{remuneracao.producaoTotal}}</td>
-            </tr>
-            <tr>
-              <td>Descontos</td>
-              <td class="laranja"  style="padding-left: 10px">{{remuneracao.descontos}}</td>
-            </tr>
-            <tr>
-              <td>Glosas</td>
-              <td class="laranja" style="padding-left: 10px">{{remuneracao.glosa}}</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6 mb-2 remuneracao-container">
-      <div class="remuneracao-background" *ngIf="remuneracao != undefined">
-        <guia-remuneracao-variavel></guia-remuneracao-variavel>
-      </div>
-    </div>
+    <app-minha-remuneracao #appMinhaRemuneracao class="col-lg-6 mb-1"
+                           [minhaRemurecao]="minhaRemuneracao"></app-minha-remuneracao>
+    <app-minha-remuneracao-variavel class="col-lg-6"
+                                    [minhaRemuneracaoDetalhe]="appMinhaRemuneracao.periodoSelecionado"></app-minha-remuneracao-variavel>
   </div>
 
-  <div class="row table-container" *ngIf="remuneracao != undefined">
+  <div class="row table-container" *ngIf="producaoMedicaPacienteList != undefined">
     <mat-tab-group style="width: 100%;">
       <mat-tab label="Produção Médica">
-        <guia-tab-producao-medica></guia-tab-producao-medica>
+        <app-producao-medica-table [producaoMedicaList]="producaoMedicaPacienteList"></app-producao-medica-table>
       </mat-tab>
       <mat-tab label="Outros Eventos">
-        <guia-tab-outros-eventos></guia-tab-outros-eventos>
+<!--        <guia-tab-outros-eventos></guia-tab-outros-eventos>-->
+
       </mat-tab>
       <mat-tab label="Descontos">
-        <guia-tab-descontos></guia-tab-descontos>
+<!--        <guia-tab-descontos></guia-tab-descontos>-->
       </mat-tab>
       <mat-tab label="Glosas">
-        <guia-tab-glosas></guia-tab-glosas>
+<!--        <guia-tab-glosas></guia-tab-glosas>-->
       </mat-tab>
     </mat-tab-group>
   </div>

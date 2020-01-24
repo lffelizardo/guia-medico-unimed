@@ -1,0 +1,43 @@
+mat-table {
+  height: 180px;
+  min-width: 630px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+mat-header-row {
+  min-height: 40px;
+}
+
+mat-header-row, mat-row {
+  border-style: none;
+}
+mat-row {
+  min-height: 25px;
+}
+mat-cell {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
+.mat-column-movimento {
+  flex: 0 0 195px;
+}
+
+.mat-column-motivo {
+  flex: 0 0 300px;
+}
+
+.mat-column-valor {
+  flex: 0 0 88px;
+}
+
+.mat-column-contestar {
+  a {
+    font-size: 12px !important;
+    color: limegreen;
+  }
+}
+

@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-10" style="color: green;">
+    <h1 mat-dialog-title>{{producaoMedicaPaciente.nomePaciente}}</h1>
+  </div>
+  <div class="col-2 close-div" >
+    <button mat-icon-button (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-5">
+
+    <div class="row">
+      <div class="col-6 remuneracao-label">
+        <mat-label>Atendido em</mat-label>
+      </div>
+      <div class="col-6 remuneracao-label" style="justify-content: left;">
+        <mat-label>Carteira do Plano</mat-label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 remuneracao-label">
+        <mat-label><b>{{producaoMedicaPaciente.data | date: 'dd/MM/yyyy'}}</b></mat-label>
+      </div>
+      <div class="col-6 remuneracao-label justify-content-start" >
+        <b>{{producaoMedicaPaciente.carteiraPaciente}}</b>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="row table-container-modal-info-pacientes">
+    <mat-tab-group cdkFocusInitial style="width: 100%"> <!--ajustar no css-->
+      <mat-tab label="Movimentos">
+        <app-producao-medica-detalhe-movimentos-table [movimentos]="producaoMedicaPaciente.movimentos"></app-producao-medica-detalhe-movimentos-table>
+      </mat-tab>
+      <mat-tab label="Modificadores">
+        <app-producao-medica-detalhe-modificadores-table [modificadores]="producaoMedicaPaciente.modificadores"></app-producao-medica-detalhe-modificadores-table>
+      </mat-tab>
+      <mat-tab label="Glosas">
+        <app-producao-medica-detalhe-glosas-table [producaoMedicaPaciente]="producaoMedicaPaciente"></app-producao-medica-detalhe-glosas-table>
+<!--        <guia-tab-modal-glosas [data]="producaoMedicaSelected"></guia-tab-modal-glosas>-->
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<div class="row col-totais-modal mt-3">
+  <div class="col-sm-5 col-md-3 text-center" >
+    Total Apresentado
+    <h3 style="color: gray">{{producaoMedicaPaciente.valorTotal | currency: 'BRL'}}</h3>
+  </div>
+  <div class="col-sm-5 col-md-3 text-center">
+    Total do Paciente
+    <h3 class="green">{{producaoMedicaPaciente.valorRecebido | currency: 'BRL'}}</h3>
+  </div>
+</div>

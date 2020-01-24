@@ -20,7 +20,7 @@ export class TabGlosasComponent implements OnInit {
   displayedColumns: string[] = ['glosa', 'movimento', 'valor', 'recuperado', 'status'];
 
   ngOnInit() {
-    this.remuneracaoService.currentRemuneracao.subscribe(r => this.glosas = r.remuneracoes.glosas);
+    // this.remuneracaoService.currentRemuneracao.subscribe(r => this.glosas = r.remuneracoes.glosas);
     this.periods = this.glosas.glosas;
   }
 

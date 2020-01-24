@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-10" style="color: green;">
+    <h1 mat-dialog-title>{{nomePaciente}}</h1>
+  </div>
+  <div class="col-2 close-div" >
+    <button mat-icon-button (click)="cancelarContestacao()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-4 modal-glosa-contestar-label">
+        <mat-label>Movimento</mat-label>
+      </div>
+      <div class="col-3 modal-glosa-contestar-label">
+        <mat-label>Valor Glosado</mat-label>
+      </div>
+      <div class="col-5 modal-glosa-contestar-label">
+        <mat-label>Motivo</mat-label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 modal-glosa-contestar-label">
+        <mat-label><b>{{glosa.movimento}}</b></mat-label>
+      </div>
+      <div class="col-3 modal-glosa-contestar-label">
+        <mat-label><b>{{glosa.valorGlosado | currency: 'BRL'}}</b></mat-label>
+      </div>
+      <div class="col-5 modal-glosa-contestar-label">
+        <mat-label><b>{{glosa.motivo}}</b></mat-label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <textarea matInput cdkFocusInitial></textarea>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <button mat-stroked-button  (click)="cancelarContestacao()">Cancelar</button>
+  </div>
+  <div class="col-6 text-right">
+    <button mat-button class="button-enviar-contestacao" (click)="enviarContestacao()">Enviar Contestação</button>
+  </div>
+</div>

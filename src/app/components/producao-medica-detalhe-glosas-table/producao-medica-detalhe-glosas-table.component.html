@@ -1,0 +1,28 @@
+<mat-table *ngIf="producaoMedicaPaciente" [dataSource]="producaoMedicaPaciente.glosas" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="movimento">
+    <mat-header-cell *matHeaderCellDef class="mat-column-paciente"> Movimento</mat-header-cell>
+    <mat-cell *matCellDef="let glosa"
+              class="mat-column-paciente"> {{glosa.idMovimento + ' - ' + glosa.movimento}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="valor">
+    <mat-header-cell *matHeaderCellDef> Valor Glosado</mat-header-cell>
+    <mat-cell *matCellDef="let glosa"> {{glosa.valorGlosado | currency: 'BRL'}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="motivo">
+    <mat-header-cell *matHeaderCellDef> Motivo</mat-header-cell>
+    <mat-cell *matCellDef="let glosa"> {{glosa.motivo}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="contestar">
+    <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+    <mat-cell *matCellDef="let glosa">
+      <a mat-button (click)="openContestar(glosa)">Contestar</a>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
